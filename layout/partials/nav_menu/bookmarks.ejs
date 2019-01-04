@@ -1,0 +1,13 @@
+<% var tabname = "书签" %>
+<li class="nav-dropdown-container bookmarks">
+  <a class="nav-link <%- page.path.match(/bookmarks(\/|$)|bookmarks(\/|$)/) ? 'current' : '' %>" href="<%- url_for("/bookmarks/") %>"><i class='fas fa-bookmark fa-fw'></i>&nbsp;<%- tabname %></a>
+  <ul class="nav-dropdown">
+    <% site.pages.find({type: tabname}).sort('order').each(function (p) { %>
+      <% if(p.title != tabname) {%>
+        <li>
+          <a href="<%- url_for(p.path) %>" class="nav-link"><%- p.title %></a>
+        </li>
+      <% } %>
+    <% }) %>
+  </ul>
+</li>

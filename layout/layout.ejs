@@ -1,0 +1,121 @@
+<% var isIndex = page.path === 'index.html' %>
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <% if(page.type || page.title) { %>
+        <title><%= page.type || page.title %> | <%= config.title %></title>
+    <% } else { %>
+        <title><%= config.title %></title>
+    <% } %>
+    <meta charset="utf-8">
+    <meta name="description" content="<%- theme.site_description %>">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <link rel="shortcut icon" type="image/x-icon" href="https://cdn.jsdelivr.net/gh/xaoxuu/assets@18.12.27/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="https://cdn.jsdelivr.net/gh/xaoxuu/assets@18.12.27/favicon/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://cdn.jsdelivr.net/gh/xaoxuu/assets@18.12.27/favicon/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://cdn.jsdelivr.net/gh/xaoxuu/assets@18.12.27/favicon/favicons/favicon-16x16.png">
+    <link rel="manifest" href="https://cdn.jsdelivr.net/gh/xaoxuu/assets@18.12.27/favicon/favicons/site.webmanifest">
+    <link rel="mask-icon" href="https://cdn.jsdelivr.net/gh/xaoxuu/assets@18.12.27/favicon/favicons/safari-pinned-tab.svg" color="#f24e32">
+    <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/xaoxuu/assets@18.12.27/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#f24e32">
+    <meta name="msapplication-config" content="https://cdn.jsdelivr.net/gh/xaoxuu/assets@18.12.27/favicon/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#f24e32">
+
+    <!-- 访问统计 -->
+    <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/meting@1.1.0/dist/Meting.min.js"></script>
+
+    <!-- style.css -->
+    <% if (config.import && config.import.style == true) { %>
+      <%- css(theme.themecdn + (isIndex ? 'css/index.min.css' : 'css/page.min.css')) %>
+    <% } else { %>
+      <%- css(isIndex ? 'css/index' : 'css/page') %>
+    <% } %>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.6.3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.min.js"></script>
+
+    <script>
+      Vue.config.productionTip = false
+      window.PAGE_TYPE = "<%- page.type %>"
+    </script>
+
+    <!-- ga -->
+    <% if (config.google_analytics) { %>
+      <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', '<%- config.google_analytics %>', '<%- config.root_domain %>');
+        ga('send', 'pageview');
+      </script>
+    <% } %>
+    <% if (config.baidu_analytics_key) { %>
+      <script>
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?<%= config.baidu_analytics_key %>";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+      </script>
+    <% } %>
+
+  </head>
+  <body class="<%- isIndex ? '' : 'docs' -%>">
+    <div id="mobile-bar" <%- isIndex ? 'class="top"' : '' %>>
+      <a class="menu-button fas fa-bars"></a>
+      <% if (page.type || page.title ) { %>
+        <h2 class="nav-title"><%= page.type || page.title %></h2>
+      <% } %>
+      <a class="logo" href="/"></a>
+    </div>
+    <%- partial('partials/header') %>
+    <% if (!isIndex) { %>
+      <div id="main" class="fix-sidebar">
+        <% if (page.blog_index) { %>
+          <%- partial('partials/blog') %>
+        <% } else { %>
+          <%- body %>
+        <% } %>
+      </div>
+      <script src="<%- url_for("https://cdn.jsdelivr.net/gh/xaoxuu/xaoxuu.github.io@master/js/smooth-scroll.min.js") %>"></script>
+    <% } else { %>
+      <%- body %>
+    <% } %>
+
+    <footer id="footer">
+      <% if (config.social) { %>
+        <div class="social-wrapper">
+          <% (config.social||[]).forEach(function(value){ %>
+            <% if (value.url && value.icon) { %>
+              <a href="<%= value.url %>" class="social <%= value.icon %>" target="_blank" rel="external noopener noreferrer nofollow"></a>
+            <%}%>
+          <%})%>
+        </div>
+      <%}%>
+      <p><a href="#">Copyright &copy; 2013-<%- new Date().getFullYear() %> Titan Studio</a></p>
+      <% if (!isIndex) { %>
+          <p>- 总访问量为 <span id="busuanzi_value_site_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span> 次 -</p>
+      <% } %>
+    </footer>
+    <!-- main custom script for sidebars, version selects etc. -->
+    <script src="<%= theme.themecdn %>js/css.escape.js"></script>
+    <script src="<%= theme.themecdn %>js/common.js"></script>
+
+    <!-- fastclick -->
+    <script src="https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      FastClick.attach(document.body)
+    }, false)
+    </script>
+  </body>
+</html>

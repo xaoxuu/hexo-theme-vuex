@@ -1,0 +1,28 @@
+<div id="posts">
+  <div class="inner">
+    <h2>TIMELINE</h2>
+    <br>
+    <% site.posts.sort('date', -1).limit(10).each(function (post) { %>
+      <div class="content with-sidebar blog post">
+        <div class="header">
+            <h3><a href="<%- post.url %>"><%- post.title %></a></h3>
+            <% if (post.date) { %>
+              <h5><i class="far fa-clock"></i>&nbsp;&nbsp;<%- post.date.format(config.date_format) %></h5>
+            <% } %>
+        </div>
+        <% if (post.excerpt) { %>
+          <%- post.excerpt %>
+          <%- partial('partials/button_fullwide', {url: post.path, icon: "fa-caret-right", title: "阅读全文"}) %>
+        <% } else { %>
+            <%- post.content %>
+            <a href="<%- post.url %>"> [查看详情] </a>
+        <% } %>
+      </div>
+    <% }) %>
+    <% if (site.posts.length > 10) { %>
+        <% site.posts.sort('date', -1).limit(1).each(function (post) { %>
+            <%- partial('partials/button_fullwide', {url: post.path, icon: "fa-caret-down", title: "查看全部"}) %>
+        <% }) %>
+    <% } %>
+  </div>
+</div>

@@ -1,0 +1,41 @@
+<!-- <li>
+  <form id="search-form">
+    <input type="text" id="search-query-<%- context %>" class="search-query st-default-search-input">
+  </form>
+</li> -->
+
+<!-- <%- partial('partials/nav_menu/blog') %>
+<!-- <%- partial('partials/nav_menu/bookmarks') %> -->
+<!-- <%- partial('partials/nav_menu/about') %> -->
+<!-- <%- partial('partials/learn_dropdown') %> -->
+
+<!-- <li>
+  <a href="<%- url_for("/v2/guide/team.html") %>" class="nav-link team<%- page.path.match(/team\.html/) ? ' current' : '' %>">团队</a>
+</li> -->
+<!-- <%- partial('partials/support_vue_dropdown') %> -->
+<!-- <%- partial('partials/language_dropdown') %> -->
+<!-- <li><a href="https://github.com/vuejs/cn.vuejs.org/" target="_blank" class="nav-link contribute">GitHub</a></li> -->
+
+
+<% if (page.path != 'index.html') { %>
+  <%- partial('partials/nav_menu/projects') %>
+  <li class="nav blog"><a class="nav-link" href="//xaoxuu.com/blog"><i class='fas fa-rss fa-fw'></i>&nbsp;博客</a></li>
+  <li class="nav blog"><a class="nav-link" href="//xaoxuu.com/blog/archives"><i class='fas fa-archive fa-fw'></i>&nbsp;归档</a></li>
+  <li class="nav about"><a class="nav-link <%- page.path.match(/about(\/|$)/) ? 'current' : '' %>" href="<%- url_for("/about/") %>"><i class='fas fa-user fa-fw'></i>&nbsp;关于</a></li>
+<% } %>
+
+
+<li class="nav-dropdown-container more">
+  <a class="nav-link <%- page.path.match(/more(\/|$)/) ? 'current' : '' %>"><i class='fas fa-ellipsis-v fa-fw'></i>&nbsp;更多</a>
+  <ul class="nav-dropdown">
+    <li><ul>
+      <li><a class="nav-link <%- page.path.match(/bookmarks(\/|$)/) ? 'current' : '' %>" href="//appx.online/bookmarks"><i class='fas fa-bookmark fa-fw'></i>&nbsp;书签</a></li>
+      <li><a class="nav-link" href="//appx.online"><i class='fas fa-download fa-fw'></i>&nbsp;下载</a></li>
+    </ul></li>
+    <li><h4></h4></li>
+    <li><ul>
+      <li><a class="nav-link" target="_blank" href="https://github.com/xaoxuu"><i class='fab fa-github fa-fw'></i>&nbsp;GitHub</a></li>
+      <li><a class="nav-link" target="_blank" href="mailto:<%- config.email %>"><i class='fas fa-envelope fa-fw'></i>&nbsp;邮件</a></li>
+    </ul></li>
+  </ul>
+</li>

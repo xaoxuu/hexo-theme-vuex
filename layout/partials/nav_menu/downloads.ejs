@@ -1,0 +1,18 @@
+<!-- <% var tabname = "下载" %>
+<li class="nav-dropdown-container downloads">
+  <a class="nav-link <%- page.path.match(/downloads(\/|$)|downloads(\/|$)/) ? 'current' : '' %>" href="<%- url_for("/downloads/") %>"><i class='fas fa-download fa-fw'></i>&nbsp;<%- tabname %></a>
+  <ul class="nav-dropdown">
+    <% site.pages.find({type: tabname}).sort('order').each(function (p) { %>
+      <% if(p.title != tabname) {%>
+        <li>
+          <a href="<%- url_for(p.path) %>" class="nav-link"><%- p.title %></a>
+        </li>
+      <% } %>
+    <% }) %>
+  </ul>
+</li>
+-->
+
+<li class="nav downloads">
+  <a class="nav-link" href="http://appx.online"><i class='fas fa-download fa-fw'></i>&nbsp;下载</a>
+</li>

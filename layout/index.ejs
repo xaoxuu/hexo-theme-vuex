@@ -1,0 +1,63 @@
+<div class="sidebar">
+  <div class="sidebar-inner-index">
+    <ul class="main-menu">
+      <br><h2><a href="<%- url_for("/") %>"><%- config.title %></a></h2>
+      <%- partial('partials/main_menu', { context: 'sidebar' }) %>
+    </ul>
+  </div>
+</div>
+
+<div id="hero">
+  <div class="inner">
+    <div class="left">
+      <img class="hero-logo" src="<%- url_for(config.avatar) %>" alt="avatar">
+    </div><div class="right">
+      <h2 class="vue"><%- config.title %></h2>
+      <div class="home-nav">
+        <ul class="pure">
+          <li><a href="<%- url_for("/projects/") %>"><i class="fas fa-flask"></i>项目</a></li>
+          <li><a href="<%- url_for("/blog/") %>"><i class="fas fa-rss"></i>博客</a></li>
+        </ul>
+        <ul class="pure">
+          <li><a href="<%- url_for("/blog/archives/") %>"><i class="fas fa-archive"></i>归档</a></li>
+          <li><a href="<%- url_for("/about/") %>"><i class="fas fa-user"></i>关于</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% if (config.motto) { %>
+  <div id="highlights">
+    <div class="inner">
+      <% (config.motto||[]).forEach(function(value){ %>
+        <div class="point">
+          <h2><%= value.title %></h2>
+          <p><%= value.detail %></p>
+        </div>
+      <%})%>
+    </div>
+  </div>
+<%}%>
+
+<%- partial('partials/timeline') %>
+
+<div id="video-modal" class="modal">
+  <div class="video-space" style="padding: 56.25% 0 0 0; position: relative;"></div>
+</div>
+
+<script>
+(function () {
+  var topScrolled = false
+
+  window.addEventListener('scroll', function () {
+    if (window.pageYOffset > 165 && !topScrolled) {
+      topScrolled = true
+      document.getElementById('mobile-bar').classList.remove('top')
+    } else if (window.pageYOffset <= 165 && topScrolled) {
+      topScrolled = false
+      document.getElementById('mobile-bar').classList.add('top')
+    }
+  })
+})()
+</script>
