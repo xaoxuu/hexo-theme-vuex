@@ -31,8 +31,12 @@
     <script src="https://cdn.jsdelivr.net/npm/meting@1.1.0/dist/Meting.min.js"></script>
 
     <!-- style.css -->
-    <% if (config.import && config.import.style == true) { %>
-      <%- css(theme.themecdn + (isIndex ? 'css/index.min.css' : 'css/page.min.css')) %>
+    <% if (theme.services && theme.services.cdn == true && config.theme_cdn) { %>
+      <% if (config.theme_cdn == true) { %>
+      <%- css(theme.info.cdn + (isIndex ? 'css/index.min.css' : 'css/page.min.css')) %>
+      <% } else if (config.theme_cdn.length > 0) { %>
+      <%- css(config.theme_cdn + (isIndex ? 'css/index.min.css' : 'css/page.min.css')) %>
+      <% } %>
     <% } else { %>
       <%- css(isIndex ? 'css/index' : 'css/page') %>
     <% } %>
@@ -107,8 +111,8 @@
       <% } %>
     </footer>
     <!-- main custom script for sidebars, version selects etc. -->
-    <script src="<%= theme.themecdn %>js/css.escape.js"></script>
-    <script src="<%= theme.themecdn %>js/common.js"></script>
+    <script src="<%= theme.info.cdn %>js/css.escape.js"></script>
+    <script src="<%= theme.info.cdn %>js/common.js"></script>
 
     <!-- fastclick -->
     <script src="https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js"></script>
