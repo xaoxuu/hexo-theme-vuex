@@ -18,7 +18,7 @@
 
 
 <% if (page.path != 'index.html2') { %>
-  <li class="nav blog"><a class="nav-link" href="//xaoxuu.com/blog"><i class='fas fa-home fa-fw'></i>&nbsp;主页</a></li>
+  <li class="nav blog"><a class="nav-link" href="//xaoxuu.com"><i class='fas fa-home fa-fw'></i>&nbsp;主页</a></li>
   <%- partial('partials/nav_menu/projects') %>
   <li class="nav about"><a class="nav-link <%- page.path.match(/about(\/|$)/) ? 'current' : '' %>" href="<%- url_for("//xaoxuu.com/about/") %>"><i class='fas fa-user fa-fw'></i>&nbsp;关于</a></li>
 <% } %>
