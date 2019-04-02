@@ -1,36 +1,36 @@
 <li class="nav-dropdown-container projects">
-  <a class="nav-link <%- page.path.match(/wiki(\/|$)|projects(\/|$)/) ? 'current' : '' %>" href="<%- url_for("/projects/") %>"><i class='fas fa-flask fa-fw'></i>&nbsp;项目</a>
+  <a class="nav-link <%- page.path.match(/(\/|$)|projects(\/|$)/) ? 'current' : '' %>" href="<%- url_for("/projects/") %>"><i class='fas fa-flask fa-fw'></i>&nbsp;项目</a>
   <ul class="nav-dropdown">
     <li><h4>iOS开源库</h4></li>
     <li><ul>
-      <li><a href="<%- url_for("/wiki/axkit/") %>" class="nav-link <%- page.path.match(/wiki\/axkit(\/|$)/) ? 'current' : '' %>">AXKit</a></li>
-      <li><a href="<%- url_for("/wiki/noticeboard/") %>" class="nav-link <%- page.path.match(/wiki\/noticeboard(\/|$)/) ? 'current' : '' %>">NoticeBoard</a></li>
+      <li><a href="<%- url_for("/axkit/") %>" class="nav-link <%- page.path.match(/axkit(\/|$)/) ? 'current' : '' %>">AXKit</a></li>
+      <li><a href="<%- url_for("/noticeboard/") %>" class="nav-link <%- page.path.match(/noticeboard(\/|$)/) ? 'current' : '' %>">NoticeBoard</a></li>
     </ul></li>
     <li><h4>iOS应用程序</h4></li>
     <li>
       <ul>
-        <li><a href="<%- url_for("/heartmate/") %>" class="nav-link <%- page.path.match(/wiki\/heartmate(\/|$)/) ? 'current' : '' %>">Heart Mate</a></li>
-        <li><a href="<%- url_for("/wiki/smartlamp/") %>" class="nav-link <%- page.path.match(/wiki\/smartlamp(\/|$)/) ? 'current' : '' %>">SmartLamp</a></li>
+        <li><a href="<%- url_for("/heartmate/") %>" class="nav-link <%- page.path.match(/heartmate(\/|$)/) ? 'current' : '' %>">Heart Mate</a></li>
+        <li><a href="<%- url_for("/smartlamp/") %>" class="nav-link <%- page.path.match(/smartlamp(\/|$)/) ? 'current' : '' %>">SmartLamp</a></li>
       </ul>
     </li>
     <li><h4>Windows应用程序</h4></li>
     <li>
       <ul>
-        <li><a href="<%- url_for("/wiki/nexus/") %>" class="nav-link <%- page.path.match(/wiki\/nexus(\/|$)/) ? 'current' : '' %>">NEXUS</a></li>
+        <li><a href="<%- url_for("/nexus/") %>" class="nav-link <%- page.path.match(/nexus(\/|$)/) ? 'current' : '' %>">NEXUS</a></li>
       </ul>
     </li>
     <li><h4>Hexo博客主题</h4></li>
     <li>
       <ul>
-        <li><a href="<%- url_for("/wiki/material-x/") %>" class="nav-link <%- page.path.match(/wiki\/material-x(\/|$)/) ? 'current' : '' %>">Material X</a></li>
+        <li><a href="<%- url_for("/material-x/") %>" class="nav-link <%- page.path.match(/material-x(\/|$)/) ? 'current' : '' %>">Material X</a></li>
       </ul>
     </li>
     <li><h4>Shell实用脚本</h4></li>
     <li>
       <ul>
-        <li><a href="<%- url_for("/wiki/hexo.sh/") %>" class="nav-link <%- page.path.match(/wiki\/hexo.sh(\/|$)/) ? 'current' : '' %>">hexo.sh</a></li>
-        <li><a href="<%- url_for("/wiki/podspec.sh/") %>" class="nav-link <%- page.path.match(/wiki\/podspec.sh(\/|$)/) ? 'current' : '' %>">podspec.sh</a></li>
-        <li><a href="<%- url_for("/wiki/vim-cn.sh/") %>" class="nav-link <%- page.path.match(/wiki\/vim-cn.sh(\/|$)/) ? 'current' : '' %>">vim-cn.sh</a></li>
+        <li><a href="<%- url_for("/hexo.sh/") %>" class="nav-link <%- page.path.match(/hexo.sh(\/|$)/) ? 'current' : '' %>">hexo.sh</a></li>
+        <li><a href="<%- url_for("/podspec.sh/") %>" class="nav-link <%- page.path.match(/podspec.sh(\/|$)/) ? 'current' : '' %>">podspec.sh</a></li>
+        <li><a href="<%- url_for("/vim-cn.sh/") %>" class="nav-link <%- page.path.match(/vim-cn.sh(\/|$)/) ? 'current' : '' %>">vim-cn.sh</a></li>
       </ul>
     </li>
 

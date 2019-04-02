@@ -17,15 +17,14 @@
 <!-- <li><a href="https://github.com/vuejs/cn.vuejs.org/" target="_blank" class="nav-link contribute">GitHub</a></li> -->
 
 
-<% if (page.path != 'index.html') { %>
+<% if (page.path != 'index.html2') { %>
+  <li class="nav blog"><a class="nav-link" href="//xaoxuu.com/blog"><i class='fas fa-home fa-fw'></i>&nbsp;主页</a></li>
   <%- partial('partials/nav_menu/projects') %>
-  <li class="nav blog"><a class="nav-link" href="//xaoxuu.com/blog"><i class='fas fa-rss fa-fw'></i>&nbsp;博客</a></li>
-  <li class="nav blog"><a class="nav-link" href="//xaoxuu.com/blog/archives"><i class='fas fa-archive fa-fw'></i>&nbsp;归档</a></li>
-  <li class="nav about"><a class="nav-link <%- page.path.match(/about(\/|$)/) ? 'current' : '' %>" href="<%- url_for("/about/") %>"><i class='fas fa-user fa-fw'></i>&nbsp;关于</a></li>
+  <li class="nav about"><a class="nav-link <%- page.path.match(/about(\/|$)/) ? 'current' : '' %>" href="<%- url_for("//xaoxuu.com/about/") %>"><i class='fas fa-user fa-fw'></i>&nbsp;关于</a></li>
 <% } %>
 
 
-<li class="nav-dropdown-container more">
+<!-- <li class="nav-dropdown-container more">
   <a class="nav-link <%- page.path.match(/more(\/|$)/) ? 'current' : '' %>"><i class='fas fa-ellipsis-v fa-fw'></i>&nbsp;更多</a>
   <ul class="nav-dropdown">
     <li><ul>
@@ -37,4 +36,4 @@
       <li><a class="nav-link" target="_blank" href="mailto:<%- config.email %>"><i class='fas fa-envelope fa-fw'></i>&nbsp;邮件</a></li>
     </ul></li>
   </ul>
-</li>
+</li> -->
