@@ -7,4 +7,4 @@ info:
 site_description: ""
 
 services:
-  cdn: true
+  # cdn: true

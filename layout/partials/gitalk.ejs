@@ -1,0 +1,27 @@
+<% if (config.gitalk){ %>
+  <h2 id="Gitalk"><a href="#Gitalk" class="headerlink" title="Gitalk"><i class="fas fa-comments" aria-hidden="true"></i>评论</a></h2>
+  <% if (page.comments_desc){ %>
+      <p><%- page.comments_desc %></p>
+  <% } %>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+  <section id="comments">
+    <div id="gitalk-container"></div>
+  </section>
+  <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+  <script type="text/javascript">
+    var gitalk = new Gitalk({
+      clientID: "<%- config.gitalk.clientID %>",
+      clientSecret: "<%- config.gitalk.clientSecret %>",
+      repo: "<%- config.gitalk.repo %>",
+      owner: "<%- config.gitalk.owner %>",
+      admin: "<%- config.gitalk.admin %>",
+      <% if(page.gitalk && page.gitalk.id) { %>
+        id: "<%= page.gitalk.id %>",
+      <% } else { %>
+        id: location.pathname,      // Ensure uniqueness and length less than 50
+      <% } %>
+      distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+    gitalk.render('gitalk-container');
+  </script>
+<% } %>
