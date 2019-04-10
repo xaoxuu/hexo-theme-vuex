@@ -1,6 +1,7 @@
 <% if (config.valine){ %>
   <% if (config.valine.enable && config.valine.app_id && config.valine.app_key && (page.comments != false)){ %>
-    <p><b><i class='fas fa-exclamation-triangle'></i> 本站已不再使用Valine评论系统，请使用Gitalk进行评论 <i class='fas fa-arrow-up'></i></b></p>
+    <p><b><i class='fas fa-exclamation-triangle'></i> 本站已不再使用Valine评论系统，请使用Gitalk进行评论 <i class='fas fa-arrow-up'></i>
+      <br><i class='fas fa-exclamation-triangle'></i> 重要问题请提<a target='_blank' rel='nofollow external' href="https://github.com/xaoxuu/hexo-theme-material-x/issues">Issue</a>。</b></p>
     <% if (page.comments_desc){ %>
         <p><%- page.comments_desc %></p>
     <% } %>
