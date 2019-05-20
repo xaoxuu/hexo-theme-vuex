@@ -1,7 +1,7 @@
 <% if (config.valine){ %>
   <% if (config.valine.enable && config.valine.app_id && config.valine.app_key && (page.comments != false)){ %>
-    <p><b><i class='fas fa-exclamation-triangle'></i> 本站已不再使用Valine评论系统，请使用Gitalk进行评论 <i class='fas fa-arrow-up'></i>
-      <br><i class='fas fa-exclamation-triangle'></i> 重要问题请提<a target='_blank' rel='nofollow external' href="https://github.com/xaoxuu/hexo-theme-material-x/issues">Issue</a>。</b></p>
+    <h2 id="评论"><a href="#评论" class="headerlink" title="评论"><i class="fas fa-comments" aria-hidden="true"></i>评论</a></h2>
+    <p><b><i class='fas fa-exclamation-triangle'></i> 有疑问请前往本项目的【<a target='_blank' rel='nofollow external' href="https://github.com/xaoxuu/hexo-theme-material-x/issues">Issue</a>】页面搜索问题，如果没有相关问题，点击【<a target='_blank' rel='nofollow external' href="https://github.com/xaoxuu/hexo-theme-material-x/issues/new/choose">New issue</a>】进行提问。</b></p>
     <% if (page.comments_desc){ %>
         <p><%- page.comments_desc %></p>
     <% } %>
