@@ -26,6 +26,16 @@
           <%- partial('partials/toc', { type: type }) %>
         </div>
       <% } %>
+      <% if (page.link) { %>
+        <div class="footer">
+          <% if (page.link.repo) { %>
+            <a class="button" href="<%- page.link.repo %>"><i class="fab fa-github fa-fw"></i> 源码</a>
+          <% } %>
+          <% if (page.link.download) { %>
+            <a class="button" href="<%- page.link.download %>"><i class="fas fa-download fa-fw"></i> 下载</a>
+          <% } %>
+        </div>
+      <% } %>
     </div>
   <% } %>
 </div>

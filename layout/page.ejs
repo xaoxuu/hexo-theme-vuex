@@ -33,9 +33,12 @@
     </div>
   <% } %>
   <br><br><br>
-  <time class="time" itemprop="dateUpdated" datetime="<%- moment(page.updated).format() %>" content="<%- date(page.updated, config.date_format) %>">
-    <i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>本文最后更新于：<%- date(page.updated, config.date_format) %>
-  </time>
+  <% if (page.lastmodified != false) { %>
+    <time class="time" itemprop="dateUpdated" datetime="<%- moment(page.updated).format() %>" content="<%- date(page.updated, config.date_format) %>">
+      <i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>本文最后更新于：<%- date(page.updated, config.date_format) %>
+    </time>
+  <% } %>
+
   <%- partial('partials/gitalk') %>
   <%- partial('partials/valine') %>
   <!-- <div class="footer">
