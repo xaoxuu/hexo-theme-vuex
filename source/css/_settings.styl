@@ -33,7 +33,8 @@ $color_warning = #FFBD2D
 $color_error = #FF6058
 
 $color_theme = $color_mac_finder
-$color_link = #ff5722
+$color_link = $color_mac_finder
+$color_link_highlight = #ff5722
 
 $gap = 20px
 $radius = 4px
@@ -74,7 +75,7 @@ card()
 hoverable_text()
   transition_all(0.2s)
   &:hover
-    color: $color_theme !important
+    color: $color_link_highlight !important
 
 color_for_bg(color = #ccc)
   $a = color
