@@ -20,9 +20,9 @@
 .content
   position: relative
   padding: 46px 0
-  max-width: 800px
+  max-width: 720px
   margin: 0 auto
-  padding-left: 50px
+  padding-left: 40px
   text-align: justify
   // >:first-child
   //   padding-top: 0
@@ -157,7 +157,9 @@
       &.about
         @media screen and (max-width: 900px)
           justify-content: center
-
+      &.auto-width
+        li
+          width: auto
   i
     &.fa-fw
       text-align: justify
@@ -332,6 +334,10 @@
 @media screen and (min-width: 1590px)
   #header
     background-color: rgba(255,255,255,.8)
+
+@media screen and (min-width: 1300px)
+  .content
+    padding-left: 150px
 
 @media screen and (max-width: 1300px)
   .content.with-sidebar
