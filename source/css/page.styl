@@ -57,8 +57,23 @@
   //   margin: 0 0 1em
   //   font-size: 1.8em
   .large
-    font-size: 4em
-    margin-top: 1em
+    &.h1
+      font-size: 4em
+      margin-top: 1em
+    &.h2
+      font-size: 2em
+      margin-top: 4em
+      margin-bottom: 2em
+    &.h3
+      font-size: 1.5em
+      margin-top: 2em
+      margin-bottom: 1em
+    &.h4
+      margin-top: 1.5em
+      font-weight: bold
+    &.p
+      font-size: 1em
+    font-size: 1.2em
     blue
       color: $color_mac_finder
     green
@@ -314,7 +329,8 @@
   .readmore
     i
       width: 18px
-
+  .time
+    float: right
 .guide-links
   margin-top: 2em
   height: 1em

@@ -32,7 +32,7 @@
   <br><br><br>
   <% if (page.lastmodified != false) { %>
     <time class="time" itemprop="dateUpdated" datetime="<%- moment(page.updated).format() %>" content="<%- date(page.updated, config.date_format) %>">
-      <i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>本文最后更新于：<%- date(page.updated, config.date_format) %>
+      <i class="fas fa-clock fa-fw" aria-hidden="true"></i>更新于：<%- date(page.updated, config.date_format) %>
     </time>
   <% } %>
 
