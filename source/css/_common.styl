@@ -66,18 +66,19 @@ p
   background-color: alpha($color_theme, 0.8)
   transition: all .15s ease
   box-sizing: border-box
-  &.white
-    background-color: #fff
-    color: $color_theme
-  &.gray
-    background-color: #f6f6f6
-    color: $light
-    border-color: #f6f6f6
-  &:hover
-    color: #fff !important
+  // &:hover
+  //   color: #fff !important
   &:hover,&.active,&:active
     background: alpha($color_theme, 1)
     box-shadow: $box-shadow-float
+  &.white
+    background-color: #fff !important
+    color: $color_theme !important
+  &.gray
+    background-color: #888 !important
+    &:hover
+      background-color: #777 !important
+
 
 .highlight
   $code-line-height = 1.5em
