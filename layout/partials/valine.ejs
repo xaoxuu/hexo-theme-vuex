@@ -1,6 +1,6 @@
 <% if (config.valine){ %>
   <% if (config.valine.enable && config.valine.app_id && config.valine.app_key && (page.comments != false)){ %>
-    <h2 id="评论"><a href="#评论" class="headerlink" title="评论"><i class="fas fa-comments" aria-hidden="true"></i>评论</a></h2>
+    <h2 class="comments" id="评论"><a href="#评论" class="headerlink" title="评论"><i class="fas fa-comments" aria-hidden="true"></i>评论</a></h2>
 
     <% if (page.comments_desc){ %>
         <p><%- markdown(page.comments_desc) %></p>

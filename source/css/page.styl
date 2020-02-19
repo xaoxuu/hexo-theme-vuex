@@ -107,6 +107,10 @@
     border-bottom: 1px solid $border
     &:before
       margin-top: -1 * $heading-link-padding-top + 15px
+    &.comments
+      border-bottom: none
+      padding-bottom: 0
+      margin-top: 1em
   h3
     margin: $h3-margin-top 0 1.2em
     line-height: 1.2
@@ -334,8 +338,13 @@
   .readmore
     i
       width: 18px
-  .time
-    float: right
+  .meta-footer
+    color: $light
+    margin-top: 1em
+    padding-top: 1em
+    line-height: 2em
+    border-top: 1px dashed #e5e5e5
+    font-size: .9em
 .guide-links
   margin-top: 2em
   height: 1em

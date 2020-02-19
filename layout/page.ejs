@@ -30,21 +30,26 @@
     </div>
   <% } %>
   <br><br><br>
-  <% if (page.lastmodified != false) { %>
-    <time class="time" itemprop="dateUpdated" datetime="<%- moment(page.updated).format() %>" content="<%- date(page.updated, config.date_format) %>">
-      <i class="fas fa-clock fa-fw" aria-hidden="true"></i>更新于：<%- date(page.updated, config.date_format) %>
-    </time>
-  <% } %>
-
+  <div class="meta-footer">
+    <% if (page.lastmodified != false) { %>
+      <time class="time" itemprop="dateUpdated" datetime="<%- moment(page.updated).format() %>" content="<%- date(page.updated, config.date_format) %>">
+        <i class="fas fa-clock fa-fw" aria-hidden="true"></i>&nbsp;本页文档最后更新于：<%- date(page.updated, theme.updated_format) %>
+      </time>
+    <% } %>
+    <div class="new-meta-item browse busuanzi">
+      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>&nbsp;本页访问量：
+      <span id="busuanzi_value_page_pv">
+        <i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i>
+      </span>次
+    </div>
+    <!-- <br>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>&nbsp;发现错误？想参与编辑？
+    <a href="https://github.com/xaoxuu/wiki-source/tree/master/src/<%- page.path.replace(/\.html$/, '.md') %>" target="_blank">
+      在 GitHub 上编辑此页！
+    </a> -->
+  </div>
   <%- partial('partials/gitalk') %>
   <%- partial('partials/valine') %>
-  <!-- <div class="footer">
 
-    发现错误？想参与编辑？
-    <a href="https://github.com/vuejs/cn.vuejs.org/blob/master/src/<%- page.path.replace(/\.html$/, '.md') %>" target="_blank">
-      在 GitHub 上编辑此页！
-    </a>
-
-  </div> -->
 
 </div>

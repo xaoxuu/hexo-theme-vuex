@@ -6,5 +6,7 @@ info:
 
 site_description: ""
 
+updated_format: 'llll'
+
 services:
   cdn: true
