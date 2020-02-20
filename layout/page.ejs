@@ -30,6 +30,15 @@
     </div>
   <% } %>
   <br><br><br>
+  <% if (page.link && (page.link.bug_report || page.link.repo)) { %>
+    <a class="button red" href="<%- page.link.bug_report ? page.link.bug_report : page.link.repo %>"><i class="fas fa-bug"></i> 反馈BUG</a>
+  <% } %>
+  <% if (page.link && (page.link.question_report || page.link.repo)) { %>
+    <a class="button yellow" href="<%- page.link.question_report ? page.link.question_report : page.link.repo %>"><i class="fas fa-comments"></i> 询问释疑</a>
+  <% } %>
+  <% if (page.link && (page.link.feature_request || page.link.repo)) { %>
+    <a class="button green" href="<%- page.link.feature_request ? page.link.feature_request : page.link.repo %>"><i class="fas fa-edit"></i> 提供建议</a>
+  <% } %>
   <div class="meta-footer">
     <% if (page.lastmodified != false) { %>
       <time class="time" itemprop="dateUpdated" datetime="<%- moment(page.updated).format() %>" content="<%- date(page.updated, config.date_format) %>">
