@@ -30,16 +30,21 @@
     </div>
   <% } %>
   <br><br><br>
-  <% if (page.link && (page.link.bug_report || page.link.repo)) { %>
-    <a class="button red" href="<%- page.link.bug_report ? page.link.bug_report : page.link.repo %>"><i class="fas fa-bug"></i> 反馈BUG</a>
-  <% } %>
-  <% if (page.link && (page.link.question_report || page.link.repo)) { %>
-    <a class="button yellow" href="<%- page.link.question_report ? page.link.question_report : page.link.repo %>"><i class="fas fa-comments"></i> 询问释疑</a>
-  <% } %>
-  <% if (page.link && (page.link.feature_request || page.link.repo)) { %>
-    <a class="button green" href="<%- page.link.feature_request ? page.link.feature_request : page.link.repo %>"><i class="fas fa-edit"></i> 提供建议</a>
-  <% } %>
   <div class="meta-footer">
+    <div class="meta-feedback">
+      <% if (page.link && (page.link.bug_report || page.link.repo)) { %>
+        <a class="button red" href="<%- page.link.bug_report ? page.link.bug_report : page.link.repo %>"><i class="fas fa-bug"></i> 反馈BUG</a>
+      <% } %>
+      <% if (page.link && (page.link.question_report || page.link.repo)) { %>
+        <a class="button yellow" href="<%- page.link.question_report ? page.link.question_report : page.link.repo %>"><i class="fas fa-comments"></i> 询问释疑</a>
+      <% } %>
+      <% if (page.link && (page.link.feature_request || page.link.repo)) { %>
+        <a class="button green" href="<%- page.link.feature_request ? page.link.feature_request : page.link.repo %>"><i class="fas fa-edit"></i> 提供建议</a>
+      <% } %>
+      <% if (page.link && (page.link.issue || page.link.repo)) { %>
+        <a class="button blue" href="<%- page.link.issue ? page.link.issue : page.link.repo %>"><i class="fas fa-edit"></i> 其它Issue</a>
+      <% } %>
+    </div>
     <% if (page.lastmodified != false) { %>
       <time class="time" itemprop="dateUpdated" datetime="<%- moment(page.updated).format() %>" content="<%- date(page.updated, config.date_format) %>">
         <i class="fas fa-clock fa-fw" aria-hidden="true"></i>&nbsp;本页文档最后更新于：<%- date(page.updated, theme.updated_format) %>
@@ -51,6 +56,7 @@
         <i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i>
       </span>次
     </div>
+
     <!-- <br>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>&nbsp;发现错误？想参与编辑？
     <a href="https://github.com/xaoxuu/wiki-source/tree/master/src/<%- page.path.replace(/\.html$/, '.md') %>" target="_blank">
